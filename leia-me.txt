@@ -1,0 +1,15 @@
+Constatar horário utilizado pela JVM
+
+Para compilar a classe..........: javac ObterHorarioJRE.java -target 1.6 -source 1.6
+Para gerar o jar................: jar -cvfm ObterHorarioJRE.jar MANIFEST.MF ObterHorarioJRE.class
+Executar o jar..................: java -jar ObterHorarioJRE.jar
+Excecutar o jar ajustando o fuso: java -Duser.timezone=GMT-1 -jar ObterHorarioJRE.jar
+
+Exemplo ao comparar horário no terminal linux
+$ date && java -jar ObterHorarioJRE.jar
+sex,  9 de jun de 2017 20:44:20
+2017/06/09 20:44:20 BRT
+
+$ date && java -Duser.timezone=GMT-1 -jar ObterHorarioJRE.jar
+sex,  9 de jun de 2017 20:45:19
+2017/06/09 22:45:19 GMT-01:00
